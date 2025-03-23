@@ -1,0 +1,54 @@
+
+
+# Allow only the src/ directory
+!/src/
+
+# Ignore compiled class files
+*.class
+
+# Ignore Eclipse & Java project metadata
+.classpath
+.project
+.settings/
+
+# Ignore build directories
+/bin/
+/target/
+/build/
+/lib/
+/out/
+
+# Ignore Maven dependencies (if using Maven)
+.mvn/
+!pom.xml  # Allow pom.xml
+
+# Ignore WebContent/WEB-INF/lib (third-party JARs)
+WebContent/WEB-INF/lib/
+
+# Ignore IDE-specific files
+### Eclipse ###
+.metadata/
+
+### IntelliJ ###
+.idea/
+*.iml
+
+### VS Code ###
+.vscode/
+
+# Ignore logs, temp files, and system files
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore Windows system folders (causing permission warnings)
+AppData/
+AppData/Local/
+AppData/Local/Microsoft/
+AppData/Local/Microsoft/Windows/
+AppData/Local/Microsoft/Windows/INetCache/
+AppData/Local/Microsoft/Windows/INetCache/Content.IE5/
+AppData/Local/Microsoft/Windows/INetCache/Low/
+AppData/Local/Microsoft/Windows/Temporary Internet Files/
