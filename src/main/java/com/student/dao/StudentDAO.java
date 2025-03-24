@@ -13,6 +13,7 @@ import com.student.model.Student;
 import com.student.util.DatabaseUtil;
 
 public class StudentDAO {
+	
     // SQL Queries
     private static final String INSERT_STUDENT_SQL = 
         "INSERT INTO students (roll_number, first_name, last_name, email, dob, gender, address, phone_number) " +
@@ -91,6 +92,7 @@ public class StudentDAO {
             ResultSet rs = preparedStatement.executeQuery();
             
             while (rs.next()) {
+            	System.out.println(rs.getString("roll_number"));
                 String rollNumber = rs.getString("roll_number");
                 String firstName = rs.getString("first_name");
                 String lastName = rs.getString("last_name");

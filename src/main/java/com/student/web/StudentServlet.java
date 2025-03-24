@@ -79,7 +79,9 @@ public class StudentServlet extends HttpServlet {
     }
 
     private void listStudents(HttpServletRequest request, HttpServletResponse response) 
+    
             throws ServletException, IOException {
+
         List<Student> listStudent = studentDAO.selectAllStudents();
         request.setAttribute("listStudent", listStudent);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/studentList.jsp");

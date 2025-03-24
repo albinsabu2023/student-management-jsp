@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         // Check if user is already logged in
         HttpSession session = request.getSession(false);
+        System.out.println(session.getAttribute("username") );
         if (session != null && session.getAttribute("username") != null) {
             response.sendRedirect(request.getContextPath() + "/students/list");
             return;
@@ -55,10 +56,12 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             session.setMaxInactiveInterval(30 * 60); // 30 minutes
-            
+           
             // Redirect to student list
             response.sendRedirect(request.getContextPath() + "/students/list");
+         
         } else {
+        	System.out.println("login failed");
             request.setAttribute("errorMessage", "Invalid username or password");
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);
